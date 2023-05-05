@@ -26,7 +26,6 @@ source "amazon-ebs" "ubuntu" {
     name  = "WebSiteImage"
     owner = "yura"
   }
-
 }
 
 build {
@@ -36,18 +35,11 @@ build {
     "source.amazon-ebs.ubuntu"
   ]
 
-  provisioner "shell" {
-    inline = [
-      "echo Updating Packages",
-      "sudo apt update"
+  provisioner "ansible" {
+    playbook_file = "../ansible/nginx.yml"
+    user          = "ubuntu"
+    ansible_env_vars = [
+      "ANSIBLE_SSH_ARGS='-o PubkeyAcceptedKeyTypes=+ssh-rsa -o HostkeyAlgorithms=+ssh-rsa'"
     ]
-  }
-
-  provisioner "shell" {
-    inline = ["sudo apt install -y nginx"]
-  }
-
-  provisioner "shell" {
-    inline = ["sudo systemctl status nginx"]
   }
 }
