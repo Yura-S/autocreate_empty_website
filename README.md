@@ -21,3 +21,6 @@ some flaws:
 
 now creating only in us-east-1
 if packer errors run one more time
+
+
+l
