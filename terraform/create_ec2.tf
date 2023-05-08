@@ -6,7 +6,12 @@ resource "aws_instance" "tf_instance" {
   vpc_security_group_ids      = [aws_security_group.tf_sg.id]
   associate_public_ip_address = true
   
+  user_data     = <<-EOF
+                    #!/bin/bash
+                    start_job.sh
+                  EOF
+
   tags = {
-    "Name" : "empty_website"
+    "Name" : "Website"
   }
 }

@@ -13,3 +13,15 @@
         name: nginx
         update_cache: true
         state: latest
+    - name: Adding script file to a remote server  
+      copy:
+        src: add_rate.sh
+        dest: /usr/bin
+    - name: giving permissions
+      shell: chmod 744 /usr/bin/add_rate.sh
+    - name: Adding job script file to a remote server
+      copy:
+        src: start_job.sh
+        dest: /usr/bin
+    - name: giving permissions
+      shell: chmod 744 /usr/bin/start_job.sh    
