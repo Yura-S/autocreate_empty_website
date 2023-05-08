@@ -29,7 +29,7 @@ if [[ $? != 0 ]]; then
 	exit 1
 fi
 
-URL=$(aws ec2 describe-instances --filters 'Name=tag:Name,Values=empty_website' --query 'Reservations[].Instances[].PublicIpAddress' --output text)
+URL=$(aws ec2 describe-instances --filters 'Name=tag:Name,Values=Website' --query 'Reservations[].Instances[].PublicIpAddress' --output text)
 if [[ $? != 0 ]]
   then
     echo "Something wrong while getting website IP"
