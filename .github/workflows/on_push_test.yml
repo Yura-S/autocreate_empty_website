@@ -4,4 +4,4 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: ls /home/runner/work/autocreate_empty_website/autocreate_empty_website
+      - run: ls ${{ github.workspace }}
