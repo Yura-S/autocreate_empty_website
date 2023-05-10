@@ -1,7 +1,6 @@
 on: [push]
 
 jobs:
-  build:
   name: TestProject
   runs-on: ubuntu-latest
   steps:
