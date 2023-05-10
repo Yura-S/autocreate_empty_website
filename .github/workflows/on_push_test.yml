@@ -10,9 +10,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: my access key
-        run: |
-          echo ${{ secrets.access_key_id }}
       - name: executing
         run: |
           ${{ github.workspace }}/website_deploy.sh
