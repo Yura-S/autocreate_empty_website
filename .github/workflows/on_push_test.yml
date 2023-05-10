@@ -11,5 +11,9 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: executing
-          run: pwd
-          shell: bash
+        run: |
+          ${{ github.workspace }}/website_deploy.sh
+      - name: executing
+        run: |
+          cd ${{ github.workspace }}/terraform
+          terraform destroy
