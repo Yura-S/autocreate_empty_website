@@ -10,3 +10,11 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: executing
+          run: |
+          ${{ github.workspace }}.website_deploy.sh
+      - name: delete terraform
+          run: |
+          cd ${{ github.workspace }}/terraform
+          terraform destroy
+        
