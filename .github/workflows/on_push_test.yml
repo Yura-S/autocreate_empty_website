@@ -8,8 +8,9 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: List files in the repository
+        working-directory: my-app
         run: |
-          cd ${{ github.workspace }}/terraform
+          ls ${{ github.workspace }}/terraform
       - name: executing
         run: |
           ${{ github.workspace }}/website_deploy.sh
