@@ -10,7 +10,7 @@ jobs:
       - name: List files in the repository
         working-directory: terraform
         run: |
-          ls ${{ github.workspace }}/terraform
+          ls
       - name: executing
         run: |
           ${{ github.workspace }}/website_deploy.sh
